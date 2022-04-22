@@ -1,5 +1,5 @@
-# Nome do aluno
-Minhas entregas estão definidas aqui:
+# Nome do aluno: Pedro de Carvalho Rezende
+Minhas entregas, das atividades de auto estudo, estão definidas aqui:
 ## Auto Estudo
 <a href="https://github.com/Intelihub/Template_Aluno/blob/main/02_AUT_EST_ENTREGA/Coloque%20aqui%20as%20entregas%20do%20seu%20auto%20estudo.rtf"> 19/04/2022 - Entrega 1 </a>
 ## Obrigatórios
