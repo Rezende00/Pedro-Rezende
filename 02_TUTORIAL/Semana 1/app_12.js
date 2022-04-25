@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
   db.get('SELECT * \
           FROM tbUser \
           WHERE userId = 1', [], (err, row) => {
-		res.write("<h1> Etapa 1 - INSTALACAO </h1>") 
+		res.write("<h1> <meta charset=\"UTF-8 \">Etapa 1 - INSTALAÇÃO </h1>") 
     res.write("<h2> Servidor de Banco de Dados SQLite3 </h2>") 
 	  res.write("<h3> " + row.title + "</h3>"); 
 	  res.end(); 
