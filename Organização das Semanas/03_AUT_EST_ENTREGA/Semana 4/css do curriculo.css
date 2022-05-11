@@ -1,0 +1,25 @@
+body{
+    color: black;
+    background-color: white;
+    margin: 50px  200px;
+}
+
+.infos {
+    position: relative;
+    right: 5%;
+}
+
+.titulo{
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.foto-perfil{
+width: 16%
+}
+img{
+    border-radius: 55%;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
