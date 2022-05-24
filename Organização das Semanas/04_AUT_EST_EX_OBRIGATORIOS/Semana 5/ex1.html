@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução de problemas com algoritmos - semana 5</title>
+    <script src="ex1.js"> </script>
+</head>
+
+<body>
+    <h1>Exercício 1 - Operações com números</h1>
+    <form id="fomr1">
+        <label for="qtd"> First Number: </label>
+        <input type="number" id="qtd" name="qtd" step="0.1" min="0.1" value="">
+    <br><br>
+        <label for="modo"> Operações:</label>
+        <select name="modo" id="modo">
+            <option value="">-- selecione -- </option>
+            <option value="0">+</option>
+            <option value="1">-</option>
+            <option value="2">*</option>
+            <option value="3">/</option>
+            <option value="4">%</option>
+        </select>
+    <br><br>
+    <label for="qtd2"> Second Number: </label>
+    <input type="number" id="qtd2" name="qtd2" step="0.1" min="0.1" value="">
+    <br><br>
+    <input type="button" id="botao" name="botao" value="Pressione" onclick="calculo();">
+    <br><br>
+</form>
+    <div id="saida"></div>
+
+    </body>
+</html>
