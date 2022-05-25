@@ -23,7 +23,7 @@ app.get('/users', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-  var sql = 'SELECT * FROM tbUser ORDER BY title COLLATE NOCASE';
+  var sql = 'SELECT * FROM tbUser';
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
@@ -43,7 +43,7 @@ app.post('/userinsert', urlencodedParser, (req, res) => {
 	db.run(sql, [],  err => {
 		if (err) {
 		    throw err;
-		}
+		}	
 	});
 	db.close(); // Fecha o banco
 	res.end();
