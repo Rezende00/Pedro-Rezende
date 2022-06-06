@@ -5,6 +5,13 @@ Declaração de variáveis
 */
 
 var calcResDiv = "#calc";
+var getResDiv = "#get";
+
+/* 
+=======================
+Funções
+======================= 
+*/
 
 /* 
 =======================
@@ -16,29 +23,10 @@ Event Listener
    verifiquemos se a página foi carregada para só então chamar
    a função CalcAddAndShow, pois ela só funcionará depois da 
    criação da div de resultado, com id "result" */
-
-/*document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
-        var x0 = 10;
-        var y0 = 20;
-        // Alternativa equivalente: var x0 = 10, y0 = 20;
-        CalcAddAndShow(x0, y0);
-  }
-}*/
 $(document).ready( function() {
     var x0 = 10, y0 = 20;
     CalcAddAndShow(x0, y0);
 });
-
-
-
-
-
-/* 
-=======================
-Funções
-======================= 
-*/
 
 /* Função que calcula uma soma e mostra a operação realizada e o resultado obtido */
 function CalcAddAndShow(x, y){
@@ -60,22 +48,26 @@ function Calc(x, y, op){
 
 
 /* Função que mostra a operação realizada */
-/*function ShowOp(x, y, op){
-    document.getElementById(calcResDiv).innerHTML += `<br /> ${x} ${op} ${y} = `;
-    //Alternativa: .. += "<br />" + x + " " + op + " " + y + " = "
-}*/
-
 function ShowOp(x, y, op){
     $(calcResDiv).append(`<br />${x} ${op} ${y} = `);
-    //Alternativa: .. += "<br />" + x + " " + op + " " + y + " = "
-}       
+}
 
 
 /* Função que mostra o resultado obtido */
-/*function ShowResult(res){
-    document.getElementById(calcResDiv).innerHTML += res;
-}*/
-
 function ShowResult(res){
     $(calcResDiv).append(res);
+}
+
+
+/* Função que faz uma requisição GET */
+function TestGET(){
+    var url = "https://jsonplaceholder.typicode.com/todos/1";
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", url, false);
+    xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
+
+    $(getResDiv).append("<br />" + xhttp.responseText);
+    $(getResDiv).append("<br />Seleção do <i>title</i>: " + JSON.parse(xhttp.response).title);
+    //console.log(xhttp.responseText);
 }

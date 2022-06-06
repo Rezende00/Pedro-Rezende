@@ -15,7 +15,8 @@ function caixa() {
         total = total % 10
     let cedulas5 = parseInt (total / 5); 
         total = total % 5
-    let cedulas2 = parseInt (total / 2); 
+    let cedulas2 = parseInt (total / 2);
+     
     let cedulas1 = parseInt(total % 2); 
 
 
