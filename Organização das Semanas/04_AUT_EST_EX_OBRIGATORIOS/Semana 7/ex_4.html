@@ -9,10 +9,20 @@
 </head>
 
 <body>
-    
+    <h1>Exercício 4 - Calculo de Turnos do Voô e o Preço</h1>
 
+    <label for="pessoas">Número de Pessoas</label>
+    <input type="number" step="1" min="0" value="0" id="pessoas" name="pessoas">
+    <button type="button" onclick="calcular()"> Calcular</button>
+    <br>
+    <label for="turno">Período</label>
+    <select id="turno" name="turno">
+      <option value="dia">Diurno</option>
+      <option value="noite">Noturno</option>
+    </select>
 
-
-
+    <div id="resultado">
+      <p>Resultado Final: R$ <span id="resultadofinal"></span></p>
+    </div>
 </body>
 </html>
