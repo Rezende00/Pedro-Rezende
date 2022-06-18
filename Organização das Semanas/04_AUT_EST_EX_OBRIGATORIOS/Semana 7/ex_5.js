@@ -1,5 +1,5 @@
 var needNewForm = 1;
-$('newform').on('click', () => {
+$('#newform').on('click', () => {
     var mediaEstudante = '';
     var mediaTotal = 0;
     var mediaExame = 0;
@@ -12,7 +12,7 @@ $('newform').on('click', () => {
         var output = '<br>';
 
         for (var i = 0; i <qtdEstudantes; i++) {
-            output += `Estudante ${i + 1} - Nota do Exame: <input type="number" class="exame"> Nota trabalho: <input type="number" class="trabalho"><br><br>`;
+            output += `<b>Estudante ${i + 1}</b> - Nota do Exame: <input type="number" class="exame"> Nota trabalho: <input type="number" class="trabalho"><br><br>`;
         }
         output += '<input type="submit" value="Calcular" id="doCalc">';
         $('#form').append(`${output}`);
@@ -23,7 +23,7 @@ $('newform').on('click', () => {
 
     $('#doCalc').on('click', () =>{
         for(var i = 0; i < qtdEstudantes; i++) {
-            mediaEstudante += `<br> Média do estudante ${i + 1}: ${(parseInt(notasExame[i].value) + parseInt(notasTrabalho[i].value)) / 2}<br>`;
+            mediaEstudante += `<br> <b>Média do estudante ${i + 1}:</b> ${(parseInt(notasExame[i].value) + parseInt(notasTrabalho[i].value)) / 2}<br>`;
             mediaTotal += parseInt(notasExame[i].value) + parseInt(notasTrabalho[i].value);
             mediaExame += parseInt(notasExame[i].value);
             mediaTrabalho += parseInt(notasTrabalho[i].value);
@@ -33,15 +33,15 @@ $('newform').on('click', () => {
         
         $('#form').append(`<hr> ${mediaEstudante}`);
         mediaTotal = mediaTotal / qtdEstudantes;
-        $('#form').append(`<br><br> Média geral: ${mediaTotal}<br>`);
+        $('#form').append(`<br><br> <b>Média geral:</b> ${mediaTotal}<br>`);
         mediaExame = mediaExame / qtdEstudantes;
-        $('#form').append(`<br><br> Média aritimética prova: ${mediaExame}<br>`);
+        $('#form').append(`<br><br> <b>Média aritimética prova:</b> ${mediaExame}<br>`);
         mediaTrabalho = mediaTrabalho / qtdEstudantes;
-        $('#form').append(`<br><br> Média aritimética trabalho: ${mediaTrabalho}<br>`)
+        $('#form').append(`<br><br> <b>Média aritimética trabalho:</b> ${mediaTrabalho}<br>`)
         arrayExameNumeros = arrayExameNumeros.sort((a, b) => a - b);
-        $('#form').append(`<br><br> Menor nota prova: ${arrayExameNumeros[0]} <br><br> Maior nota prova: ${arrayExameNumeros[arrayExameNumeros.length - 1]}<br>`);
-        arrayNumbersJob = arrayNumbersJob.sort((a, b) => a - b);
-        $('#form').append(`<br> Menor nota trabalho: ${arrayTrabalhoNumeros[0]} <br><br> Maior nota trabalho: ${arrayTrabalhoNumeros[arrayTrabalhoNumeros.length - 1]}<br>`);
+        $('#form').append(`<br><br> <b>Menor nota prova:</b> ${arrayExameNumeros[0]} <br><br> <b>Maior nota prova:</b> ${arrayExameNumeros[arrayExameNumeros.length - 1]}<br>`);
+        arrayTrabalhoNumeros = arrayTrabalhoNumeros.sort((a, b) => a - b);
+        $('#form').append(`<br> <b>Menor nota trabalho:</b> ${arrayTrabalhoNumeros[0]} <br><br> <b>Maior nota trabalho:</b> ${arrayTrabalhoNumeros[arrayTrabalhoNumeros.length - 1]}<br>`);
     });    
 
     needNewForm = 0;    
