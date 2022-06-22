@@ -1,10 +1,9 @@
 const express = require("express");
 const app = express();
 //const bodyParser = require('body-parser');
-const hostname = "127.0.0.1";
 const path = require("path");
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 const sqlite3 = require("sqlite3").verbose();
 const DBPATH = path.join(__dirname, "curriculo.db");
 
@@ -100,6 +99,6 @@ app.delete("/comment/:id", urlencodedParser, (req, res) => {
 });
 
 /* Inicia o servidor */
-app.listen(port, hostname, () => {
-  console.log(`BD server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+  console.log(`BD server running at port:${port}`);
 });
