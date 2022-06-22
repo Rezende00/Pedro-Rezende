@@ -2,15 +2,16 @@ const express = require("express");
 const app = express();
 //const bodyParser = require('body-parser');
 const hostname = "127.0.0.1";
+const path = require("path");
 
 const port = 3000;
 const sqlite3 = require("sqlite3").verbose();
-const DBPATH = "curriculo.db";
+const DBPATH = path.join(__dirname, "curriculo.db");
 
 const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.use(express.static("./"));
+app.use(express.static(path.join(__dirname, "./")));
 
 app.use(express.json());
 
